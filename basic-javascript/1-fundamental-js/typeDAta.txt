@@ -1,0 +1,451 @@
+Tipe Data
+Pada materi sebelumnya kita telah belajar tentang variabel untuk menyimpan nilai. Nilai yang kita tetapkan pada variabel pasti memiliki tipe data. Tipe data merupakan pengklasifikasian data berdasarkan jenisnya. Pada JavaScript terdapat beberapa tipe data sebagai berikut:
+
+Undefined
+Tipe data ini terbentuk ketika sebuah variabel tidak memiliki nilai. Artinya, ketika kita mendeklarasikan variabel tanpa menginisialisasikan nilainya, variabel tersebut menjadi undefined. Contoh:
+
+main.js
+let
+1
+let x="0";
+2
+console.log(typeof(x));
+3
+​
+4
+ x=0;
+5
+console.log(typeof(x));
+6
+​
+7
+ x=true;
+8
+console.log(typeof(x));
+9
+​
+10
+x;
+11
+console.log(typeof(x));
+12
+​
+13
+/* output: undefined */
+ Input  Reset
+ Jalankan
+string
+number
+boolean
+boolean
+Pada contoh kode di atas, kita mendeklarasikan variabel x, tetapi kita tidak menginisialisasikan dengan nilai apa pun. Ketika kita memastikan tipe data dengan menggunakan fungsi typeof(), ia akan menghasilkan output undefined.
+
+Fungsi typeof() digunakan untuk memastikan tipe data pada variabel dengan mengembalikan tipe data tersebut dalam bentuk teks.
+
+
+
+Numbers
+Nilai dari tipe data number adalah angka. Variabel bertipe data number dituliskan seperti angka pada umumnya:
+
+let x = 10;
+Jika angka tersebut merupakan sebuah bilangan desimal, maka kita bisa gunakan tanda titik pada pecahan bilangannya.
+
+main.js
+1
+let x = 10;
+2
+console.log(typeof(x))
+3
+​
+4
+/* output: number */
+5
+​
+6
+let y = 17.25;
+7
+console.log(typeof(y))
+8
+​
+9
+/* output: number */
+ Input  Reset
+ Jalankan
+number
+number
+Pada tipe data number, kita juga dapat melakukan perhitungan aritmatika seperti penjumlahan, pengurangan, perkalian, dsb. Berikut operator yang dapat kita gunakan dalam perhitungan aritmatika pada tipe data number:
+
+Operator	Fungsi	Contoh
++	Penjumlahan	10 + 10 = 20
+-	Pengurangan	15 - 7 = 8
+/	Pembagian	21 / 7 = 3
+*	Perkalian	9 * 9 = 81
+%	Sisa hasil bagi	5 % 2 = 1
+**	Perpangkatan	3 ** 3 = 27
+main.js
+1
+let a = 12;
+2
+let b = 9;
+3
+​
+4
+console.log(a + b)
+5
+console.log(a - b)
+6
+console.log(a * b)
+7
+console.log(a / b)
+8
+console.log(a % b)
+9
+​
+10
+/* output:
+11
+21
+12
+3
+13
+108
+14
+1.3333333333333333
+15
+3
+16
+*/
+ Input  Reset
+ Jalankan
+
+            
+Pada operator aritmatika juga terdapat operator increment (++) dan decrement (--). Operator increment dan decrement digunakan untuk menambahkan atau mengurangi nilai 1 pada nilai variabel yang ada sekarang.
+
+Operator ini dapat dituliskan sebelum atau sesudah variabel, tetapi hal tersebut bukan berarti sama. Berikut ketentuannya:
+
+Jika dituliskan setelah variabel (x++), expression akan menghasilkan nilai variabel sebelum ditingkatkan nilainya.
+Jika dituliskan sebelum variabel (++x), expression akan menghasilkan nilai variabel setelah ditingkatkan nilainya.
+Untuk lebih jelasnya, berikut adalah contoh kode penerapan operator tersebut, perhatikan hasil yang didapat.
+
+main.js
+1
+/* Increment dan Decrement */
+2
+​
+3
+let postfix = 5;
+4
+console.log(postfix++);
+5
+/* output: 5 */
+6
+console.log(postfix);
+7
+/* output: 6 */
+8
+​
+9
+let prefix = 5;
+10
+console.log(++prefix);
+11
+/* output: 6 */
+ Input  Reset
+ Jalankan
+
+            
+
+
+BigInt
+Pada JavaScript, tipe data “Number” hanya mencakup nilai dari -(253 - 1) hingga (253 - 1). Untuk kebutuhan umum, sebenarnya nilai tersebut sudah sangat cukup. Namun, akan ada kebutuhan tertentu di mana kita membutuhkan cakupan nilai yang lebih besar, seperti untuk kriptografi atau menentukan waktu hingga presisi microsecond.
+
+Untuk nilai di luar Number, kita bisa menggunakan tipe BigInt. Untuk membedakan tipe BigInt dan Number, tambahkan karakter n di akhir angka. Contohnya adalah seperti kode di bawah ini. Bandingkan dengan yang bertipe Number.
+
+main.js
+1
+const bigNumber = 1234567890123456789012345678901234567890n;
+2
+const myInt = 1234567890123456789012345678901234567890;
+3
+​
+4
+console.log(bigNumber);
+5
+console.log(myInt);
+6
+​
+7
+/* output
+8
+1234567890123456789012345678901234567890n
+9
+1.2345678901234568e+39
+10
+*/
+ Input  Reset
+ Jalankan
+
+            
+Meskipun digunakan untuk menyimpan angka dengan nilai besar, namun BigInt tetap bisa digunakan untuk nilai yang lebih kecil.
+
+const bigIntButSmall = 7n;
+Kita juga bisa menggunakan BigInt untuk operasi aritmatika pada umumnya. Yang membedakan adalah pada operasi pembagian, hasilnya akan dibulatkan ke bawah dan tanpa mengandung nilai desimal. Contohnya adalah seperti ini:
+
+main.js
+1
+console.log(5n + 2n);
+2
+console.log(5n - 2n);
+3
+console.log(5n * 2n);
+4
+console.log(5n / 2n);
+5
+console.log(5n % 2n);
+6
+​
+7
+/* output
+8
+7n
+9
+3n
+10
+10n
+11
+2n; Bukan 2.5n
+12
+1n
+13
+*/
+ Input  Reset
+ Jalankan
+
+            
+
+
+Strings
+Tipe data selanjutnya adalah string yang merupakan sebuah teks. Untuk menetapkan nilai sebagai string pada variabel gunakan tanda petik satu (‘) atau petik dua (“) di antara teksnya. Contohnya:
+
+main.js
+1
+let greet = "Hello";
+2
+console.log(typeof(greet))
+3
+​
+4
+/* output: string */
+ Input  Reset
+ Jalankan
+
+            
+Tidak ada perbedaan antara menggunakan petik satu atau petik dua. Anda dapat menggunakan tanda petik secara bergantian, khususnya jika Anda memiliki teks yang mengandung tanda petik.
+
+main.js
+1
+const question = '"What do you think of JavaScript?" I asked';
+2
+​
+3
+console.log(question)
+4
+​
+5
+/* output: "What do you think of JavaScript?" I asked */
+ Input  Reset
+ Jalankan
+
+            
+Lalu bagaimana jika teks memiliki kedua tanda petik seperti ini?
+
+main.js
+1
+const answer = '"I think it's awesome!" he answered confidently';
+2
+​
+3
+console.log(answer);
+ Input  Reset
+ Jalankan
+
+            
+Tentunya kode di atas akan menghasilkan eror. Solusinya, gunakan backslash(\) untuk mengurangi ambiguitas dalam tanda petik. Mekanisme ini juga dikenal dengan nama escape string. Sehingga kode di atas akan menjadi seperti berikut:
+
+const answer = '"I think it\'s awesome!" he answered confidently';
+Backslash sebelum tanda petik akan memberitahukan interpreter bahwa itu hanyalah tanda petik dan tidak boleh ditafsirkan sebagai pembatas string. Selain tanda petik, backslash juga berguna untuk mengabaikan simbol lain yang menimbulkan ambigu di dalam string, contohnya seperti backslash itu sendiri.
+
+console.log("Windows path: C:\\Program Files\\MyProject");
+Pada String, kita juga dapat menggunakan operator plus (+). Operator tersebut berfungsi untuk menggabungkan dua teks yang terpisah menjadi satu buah teks. Contohnya seperti ini:
+
+main.js
+1
+let greet = "Hello";
+2
+let moreGreet = greet + greet;
+3
+console.log(moreGreet);
+4
+​
+5
+/* output: HelloHello */
+ Input  Reset
+ Jalankan
+
+            
+Ingat, string concatenation seperti di atas akan menggabungkan string apa adanya, sehingga jika Anda ingin menggabungkan dua kata atau lebih perlu menambahkan spasi sendiri.
+
+Selain concatenation, string pada JavaScript juga mendukung string interpolation. Sederhananya, kita bisa memasukkan variabel ke dalam sebuah string template. Contohnya adalah seperti berikut:
+
+main.js
+1
+const myName = "Luke";
+2
+console.log(`Hello, my name is ${myName}.`);
+3
+​
+4
+/* output: Hello, my name is Luke. */
+ Input  Reset
+ Jalankan
+
+            
+Perhatikan bahwa untuk mendefinisikan string template, Anda perlu menggunakan backticks (`), biasanya terletak di keyboard di bawah tombol Esc . Di dalam string letakkan variabel yang ingin dimasukkan ke dalam placeholder ${myName}.
+
+
+
+Boolean
+Boolean hanya memiliki dua nilai, yaitu true atau false. Tipe data ini menjadi kunci utama dalam penentuan logika. Kita akan banyak menggunakannya nanti dalam materi if/else statement. Untuk menetapkan nilai boolean pada variabel, gunakan keyword true atau false seperti di bawah ini.
+
+main.js
+1
+let x = true;
+2
+let y = false;
+3
+​
+4
+console.log(typeof(x))
+5
+console.log(typeof(y))
+6
+​
+7
+/* output: 
+8
+boolean
+9
+boolean
+10
+*/
+ Input  Reset
+ Jalankan
+
+            
+Kita juga bisa menggunakan operator komparasi seperti lebih dari (>) atau kurang dari (<). Contohnya:
+
+main.js
+1
+const a = 10;
+2
+const b = 12;
+3
+​
+4
+let isGreater = a > b;
+5
+let isLess = a < b;
+6
+​
+7
+console.log(isGreater);
+8
+console.log(isLess);
+9
+​
+10
+/* output:
+11
+false
+12
+true
+13
+*/
+ Input  Reset
+ Jalankan
+
+            
+
+
+Null
+Tipe berikutnya adalah null. Serupa dengan undefined, namun null perlu diinisialisasikan pada variabel. Null biasa digunakan sebagai nilai sementara pada variabel, tapi sebenarnya nilai tersebut “tidak ada”.
+
+Terkadang kita perlu membuat sebuah variabel, namun kita belum memerlukan nilai apa-apa dan tidak ingin terikat oleh tipe data apa pun. Nah, daripada kita tidak menetapkan nilai apa pun (variabel akan undefined) sebaiknya kita beri nilai null pada variabel tersebut dan ubah nanti ketika kita membutuhkannya.
+
+Untuk menetapkan null pada variabel, kita dapat gunakan keyword null ketika variabel tersebut diinisialisasi.
+
+main.js
+1
+let someLaterData = null;
+2
+console.log(someLaterData);
+3
+​
+4
+/* output:
+5
+null
+6
+*/
+ Input  Reset
+ Jalankan
+
+            
+
+
+Symbol
+Symbol adalah tipe data baru yang dikenalkan pada ES6. Tipe data Symbol digunakan untuk menunjukkan identifier yang unik. Ketika membuat Symbol, kita bisa memberikan deskripsi atau nama symbol seperti ini:
+
+main.js
+1
+const id = Symbol("id");
+2
+​
+3
+console.log(id);
+4
+​
+5
+/* output
+6
+Symbol(id)
+7
+*/
+ Input  Reset
+ Jalankan
+
+            
+Symbol disebut sebagai identifier yang unik karena meskipun kita membuat dua variabel symbol dengan nama atau deskripsi yang sama, kedua nilainya tetap dianggap berbeda. Contohnya lihat kode berikut:
+
+main.js
+1
+const id1 = Symbol("id");
+2
+const id2 = Symbol("id");
+3
+​
+4
+console.log(id1 == id2);
+5
+​
+6
+/* output
+7
+false
+8
+*/
+ Input  Reset
+ Jalankan
+
+            
+Symbol ini umumnya digunakan sebagai nama property dari Object. Object sendiri merupakan tipe data kompleks untuk menyimpan berbagai struktur data. Kita akan segera bertemu dan mempelajari tentang object pada modul Data Structure.
