@@ -1,0 +1,20 @@
+Functional Programming (FP) adalah gaya pemrograman yang mengutamakan penggunaan fungsi (function) sebagai elemen dasar dalam pengembangan aplikasi. Dalam JavaScript, FP memungkinkan pengguna untuk menulis kode yang lebih bersih, terstruktur, mudah dipelihara, dan mudah diuji.
+
+Beberapa ciri khas dari FP dalam JavaScript meliputi:
+
+Immutability: data tidak dapat diubah setelah dibuat, sehingga fungsi hanya dapat mengembalikan nilai baru.
+
+Pure functions: fungsi hanya bergantung pada parameter masukan dan tidak mempengaruhi kondisi di luar fungsi, sehingga menghasilkan nilai yang konsisten dan dapat diprediksi.
+
+Higher-order functions: fungsi dapat diperlakukan sebagai nilai, diteruskan sebagai parameter, atau dikembalikan sebagai nilai.
+
+Dalam JavaScript, beberapa fitur yang mendukung FP meliputi:
+
+Lambda expressions: fungsi anonim yang tidak memiliki nama dan dapat digunakan sebagai argumen dalam fungsi lain.
+Closure: kemampuan fungsi untuk menyimpan referensi ke variabel yang dideklarasikan di lingkungan luar fungsi.
+Array methods: beberapa metode built-in pada Array, seperti map(), filter(), reduce(), dan lainnya, yang memudahkan penggunaan FP pada koleksi data.
+Dengan penggunaan FP, pengguna JavaScript dapat menulis kode yang lebih bersih, terstruktur, dan mudah dipelihara. Namun, pengguna juga harus memperhatikan performa, terutama ketika data yang diolah sangat besar, sehingga dapat mempengaruhi waktu eksekusi.
+
+
+
+
